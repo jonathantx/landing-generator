@@ -1,0 +1,36 @@
+---
+import Template2Layout from '../../layouts/Template2Layout.astro';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export async function getStaticPaths() {
+    const dir = path.resolve("content/template2");
+    const files = fs.readdirSync(dir);
+
+    return files.map((filename) => {
+        const slug = filename.replace(".md", "");
+            return {
+                params: { slug },
+            };
+        });
+}
+
+const { slug } = Astro.params;
+
+const filePath = path.resolve(`content/template2/${slug}.md`);
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+const { data } = matter(fileContent);
+
+// Campos do frontmatter
+const { headline, imageUrl, refsImage, scientificRefs, linksRodape, footerText } = data;
+---
+
+<Template2Layout
+  headline={headline}
+  imageUrl={imageUrl}
+  refsImage={refsImage}
+  scientificRefs={scientificRefs}
+  linksRodape={linksRodape}
+  footerText={footerText}
+/>

@@ -1,0 +1,10 @@
+{
+    "plugins": {
+        "postcss-pxtorem" : {
+            "propsList": [
+                "*",
+                "!letter-spacing"
+            ]
+        }
+    }
+}

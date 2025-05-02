@@ -1,0 +1,58 @@
+---
+
+import Button from "./Button.astro"
+
+const { name, picture, address} = Astro.props
+
+---
+
+<article class="c-social-card">
+    <h1 class="c-social-card__name">{name}</h1>
+
+    <img 
+        src={picture}
+        alt="Picture of {name}" 
+        width="80" 
+        height="80" 
+        class="c-social-card__picture">
+
+    <address class="c-social-card__address">{address}</address>
+
+    <aside>
+        <Button label="Follow" />
+        <Button label="Message" />
+    </aside>
+</article>
+
+<style lang="scss">
+    .c-social-card {
+        align-items: center;
+        background-color: #fff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px;
+        
+        &__picture{
+            border-radius: 9999px;
+            outline: 1px solid gainsboro;
+            order: -1;
+        }
+    
+        &__name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            margin: 12px 0 0;
+            text-align: center;
+        }
+    
+        &__address {
+            margin: 12px;
+            color: gray;
+        }
+    }
+
+  
+</style>

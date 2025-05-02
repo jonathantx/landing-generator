@@ -1,0 +1,35 @@
+---
+import Template1Layout from '../../layouts/Template1Layout.astro';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+export async function getStaticPaths() {
+    const dir = path.resolve("content/template1");
+    const files = fs.readdirSync(dir);
+
+    return files.map((filename) => {
+        const slug = filename.replace(".md", "");
+            return {
+                params: { slug },
+            };
+        });
+}
+
+const { slug } = Astro.params;
+const filePath = path.resolve(`content/template1/${slug}.md`);
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+const { data } = matter(fileContent);
+
+// Campos do frontmatter
+const { title, videoUrl, buttonContent, description, footerText, footerLinks } = data;
+---
+
+<Template1Layout
+    title={title}
+    videoUrl={videoUrl}
+    buttonContent={buttonContent}
+    description={description}
+    footerText={footerText}
+    footerLinks={footerLinks}
+/>
