@@ -25,14 +25,16 @@ Acesse o projeto publicado na Vercel:
 ```
 content/
   ├── template1/     # Páginas do Template 1 (1000 arquivos .md)
-  └── template2/     # Páginas do Template 2 (1000 arquivos .md)
+  ├── template2/     # Páginas do Template 2 (1000 arquivos .md)
+  └── template3/     # Páginas do Template 3 (portfólio)
 src/
   ├── layouts/
   │   ├── Template1Layout.astro
   │   └── Template2Layout.astro
   ├── pages/
   │   ├── template1/[slug].astro
-  │   └── template2/[slug].astro
+  │   ├── template2/[slug].astro
+  │   └── template3/portfolio.astro
   └── tina/
       ├── client.ts
       └── types.ts
@@ -86,6 +88,13 @@ Campos:
 - `scientificRefs` (array de 20+ referências científicas)
 - `footerText`
 - `linksRodape` (array de texto + URL)
+
+### Template 3 (rota: `/template3/portfolio`)
+
+Template de portfólio pessoal com layout moderno, responsivo e estilizado com **Tailwind CSS**.  
+Ideal para apresentar profissionais, freelancers ou projetos de forma visual e impactante.
+
+Local do layout: `src/pages/template3/portfolio.astro`
 
 ---
 
