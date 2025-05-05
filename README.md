@@ -2,6 +2,11 @@
 
 Este projeto foi desenvolvido como parte de um teste técnico para a A3 Media. Ele consiste na criação de duas landing pages replicadas fielmente a partir de exemplos reais, utilizando o framework **Astro.js** e o CMS baseado em arquivos locais **TinaCMS**, com geração automática de 1000 variações por template via **faker.js**.
 
+## 🌐 Deploy Online
+
+Acesse o projeto publicado na Vercel:  
+👉 https://landing-generator-psi.vercel.app/
+
 ---
 
 ## 🚀 Tecnologias Utilizadas

@@ -1,0 +1,27 @@
+---
+import Template3Layout from '../../layouts/Template3Layout.astro';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+
+// Caminho fixo para o arquivo markdown
+const filePath = path.resolve('content/template3/portfolio.md');
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+const { data } = matter(fileContent);
+
+// Campos do frontmatter
+const { name, imageUrl, profissao, telefone, email, localidade, dataNascimento, sobreMim, educacao, experiencia } = data;
+---
+
+<Template3Layout 
+    name={name}
+    imageUrl={imageUrl}
+    profissao={profissao}
+    telefone={telefone}
+    email={email}
+    localidade={localidade}
+    dataNascimento={dataNascimento}
+    sobreMim={sobreMim}
+    educacao={educacao}
+    experiencia={experiencia}
+/>

@@ -139,6 +139,102 @@ export default defineConfig({
           },
    
         ]
+      },
+      {
+        name: "template3",
+        label: "Portfolio Template",
+        path: "content/template3",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            name: "name",
+            label: "Nome",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "imageUrl",
+            label: "Imagem Principal (URL)",
+          },
+          {
+            type: "string",
+            name: "profissao",
+            label: "Profissão",
+          },
+          {
+            type: "string",
+            name: "telefone",
+            label: "Telefone",
+          },
+          {
+            type: "string",
+            name: "email",
+            label: "E-mail",
+          },
+          {
+            type: "string",
+            name: "localidade",
+            label: "Localidade (São Paulo, Brasil)",
+          },
+          {
+            type: "string",
+            name: "dataNascimento",
+            label: "Data de Nascimento (03 de Março, 1999)",
+          },
+          {
+            type: "rich-text",
+            name: "sobreMim",
+            label: "Sobre Mim",
+          },
+          {
+            type: "object",
+            name: "educacao",
+            label: "Educação",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "periodo",
+                label: "Periodo (2018-2022)"
+              },
+              {
+                type: "string",
+                name: "curso",
+                label: "Curso"
+              },
+              {
+                type: "string",
+                name: "instituicao",
+                label: "Instituição"
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "experiencia",
+            label: "Experiência Profissional",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "periodo",
+                label: "Periodo (2018-2022)"
+              },
+              {
+                type: "string",
+                name: "funcao",
+                label: "Função"
+              },
+              {
+                type: "string",
+                name: "empresa",
+                label: "Empresa"
+              }
+            ]
+          },
+        ]
       }
       
     ],

@@ -1,0 +1,78 @@
+---
+// You can add props here if needed
+import { Facebook, Twitter, Youtube, Linkedin } from '@lucide/astro';
+
+const { info } = Astro.props
+
+const {name, imageUrl, profissao, telefone, email, localidade, dataNascimento } = info
+
+---
+
+<div class="bg-slate-900 rounded-lg">
+    <!-- Profile Image -->
+    <div class="flex justify-center p-4 relative mb-16">
+        <div class="w-40 h-40 rounded-lg overflow-hidden bg-pink-300 absolute -top-16">
+            <img src={imageUrl} alt="Profile" class="w-full h-full object-cover" />
+        </div>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="p-4 text-center">
+        <h1 class="text-xl font-bold">{name}</h1>
+        <p class="text-sm text-gray-400">{profissao}</p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center gap-2 mt-3">
+            <a href="#" class="bg-blue-800 p-2 rounded-md size-8 flex justify-center items-center">
+                <Facebook />
+            </a>
+            <a href="#" class="bg-blue-400 p-2 rounded-md size-8 flex justify-center items-center">
+                <Twitter />
+            </a>
+            <a href="#" class="bg-red-600 p-2 rounded-md size-8 flex justify-center items-center">
+                <Youtube />
+            </a>
+            <a href="#" class="bg-blue-600 p-2 rounded-md size-8 flex justify-center items-center">
+                <Linkedin />
+            </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-6 space-y-3 text-xs">
+            <div class="flex items-center gap-3 bg-slate-800 p-2 rounded-md">
+                <div class="bg-slate-600 p-2 rounded-md">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <span>{telefone}</span>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-800 p-2 rounded-md overflow-hidden ">
+                <div class="bg-slate-600 p-2 rounded-md">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span>{email}</span>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-800 p-2 rounded-md">
+                <div class="bg-slate-600 p-2 rounded-md">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <span>{localidade}</span>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-800 p-2 rounded-md">
+                <div class="bg-slate-600 p-2 rounded-md">
+                    <i class="fas fa-calendar"></i>
+                </div>
+                <span>{dataNascimento}</span>
+            </div>
+        </div>
+
+        <!-- Download CV Button -->
+        <div class="mt-6 pb-4">
+            <button class="bg-slate-600 text-white py-2 px-4 rounded-full flex items-center justify-center w-full">
+                <i class="fas fa-download mr-2"></i> Download CV
+            </button>
+        </div>
+    </div>
+</div>
